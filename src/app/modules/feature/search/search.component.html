@@ -1,0 +1,10 @@
+<mat-form-field class="example-form-field">
+  <mat-label>Search your cocktail below</mat-label>
+  <input matInput type="text" [(ngModel)]="value">
+  <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Search" (click)="search()">
+    <mat-icon>search</mat-icon>
+  </button>
+</mat-form-field>
+<div>
+  {{drinks| json}}
+</div>
