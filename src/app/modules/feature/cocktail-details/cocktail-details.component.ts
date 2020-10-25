@@ -65,9 +65,7 @@ export class CocktailDetailsComponent implements AfterViewInit {
   }
 
   filter = () => {
-    this.dataSource.filterPredicate = (data) =>
-      (data.name.indexOf(this.value) !== -1 ||
-        data.id.indexOf(this.value) !== -1 );
+    this.dataSource.filter = this.value;
   }
 
 

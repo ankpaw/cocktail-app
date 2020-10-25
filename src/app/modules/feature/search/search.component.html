@@ -1,7 +1,19 @@
-<mat-form-field class="example-form-field">
+<mat-form-field class="search-form-field">
   <mat-label>Search your cocktail below</mat-label>
   <input matInput type="text" [(ngModel)]="value">
   <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Search" (click)="search()">
     <mat-icon>search</mat-icon>
   </button>
 </mat-form-field>
+
+<ng-container *ngFor="let drink of drinks">
+  <mat-card>
+    <mat-card-title>{{drink.name}}</mat-card-title>
+    <mat-card-subtitle>{{drink.category}}</mat-card-subtitle>
+    <mat-card-content>
+      <img class="card-image" mat-card-image [src]="drink.picture">
+      <div>{{drink.instructions}}</div>
+    </mat-card-content>
+  </mat-card>
+</ng-container>
+

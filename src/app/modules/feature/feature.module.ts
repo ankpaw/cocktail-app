@@ -9,6 +9,7 @@ import { CocktailDetailsComponent } from './cocktail-details/cocktail-details.co
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSortModule } from '@angular/material/sort';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatIconModule,
     MatTableModule,
     MatProgressSpinnerModule,
-    MatSortModule
+    MatSortModule,
+    MatCardModule
   ],
   exports: [SearchComponent, CocktailDetailsComponent]
 })
