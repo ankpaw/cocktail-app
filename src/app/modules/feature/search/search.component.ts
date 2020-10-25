@@ -8,7 +8,7 @@ import { CocktailService } from '../../../services/cocktail.service';
 })
 export class SearchComponent implements OnInit {
 
-  value = 'Jack Daniels';
+  value = 'Mojito';
   drinks = {};
 
   constructor(private cocktailService: CocktailService) { }
@@ -19,7 +19,6 @@ export class SearchComponent implements OnInit {
   search = () => {
     this.cocktailService.searchCocktail(this.value).subscribe((data) => {
       this.drinks = data;
-      console.log(data);
     })
   }
 

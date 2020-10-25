@@ -8,15 +8,20 @@ import { catchError, retry } from 'rxjs/operators';
 })
 export class CocktailService {
 
-  apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php";
+  searchApiUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php";
+  getApiUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a";
 
   constructor(private http: HttpClient) { }
 
   searchCocktail = (value : string) : Observable<object> => {
-    return this.http.get(this.apiUrl, {
+    return this.http.get(this.searchApiUrl, {
       params: {
         s: value
       }
     });
+  }
+
+  getAllCocktails = () : Observable<object> => {
+    return this.http.get(this.getApiUrl);
   }
 }
