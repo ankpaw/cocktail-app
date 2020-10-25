@@ -18,6 +18,7 @@ export class SearchComponent implements OnInit {
 
   search = () => {
     this.cocktailService.searchCocktail(this.value).subscribe((data) => {
+      this.drinks = [];
       data['drinks'].map((c) => {
         this.drinks.push({
           name: c['strDrink'],
